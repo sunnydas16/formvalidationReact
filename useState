@@ -1,0 +1,16 @@
+import React from 'react'
+import { useState } from 'react'
+
+const App = () => {
+
+  const [a, setA] = useState(0)
+
+  return(
+    <div>
+      <h1>You click {a} times</h1>
+      <button onClick={()=>{setA(a+1)}}>Increasing</button>
+      <button onClick={()=>{setA(a-3)}}>Decreasing</button>
+    </div>
+  )
+}
+export default App
