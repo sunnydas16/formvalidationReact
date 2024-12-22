@@ -1,0 +1,127 @@
+// components maping with json data
+
+
+----------********** APP.jsx **********----------
+import React from 'react'
+import Card from './components/Card'
+
+const App = () => {
+
+  const info = [
+    {
+      "name": "John Doe",
+      "age": 30,
+      "number": "+1234567890"
+    },
+    {
+      "name": "Jane Smith",
+      "age": 25,
+      "number": "+0987654321"
+    },
+    {
+      "name": "Alice Johnson",
+      "age": 28,
+      "number": "+1122334455"
+    },
+    {
+      "name": "Bob Brown",
+      "age": 35,
+      "number": "+1222333444"
+    },
+    {
+      "name": "Charlie White",
+      "age": 40,
+      "number": "+1333444555"
+    },
+    {
+      "name": "sunny das",
+      "age": 69,
+      "number": "+9163729302"
+    }
+  ]
+  
+
+  return (
+    <div>
+      {info.map(function(info){
+        return <Card ne={info.name} ag={info.age} nr={info.number}/>
+      })}
+    </div>
+  )
+}
+
+export default App
+
+
+----------********** Card.jsx **********----------
+import React from 'react'
+
+const Card = (props) => {
+  return (
+    <div className='card'>
+        <div className="left">
+            <h1>{props.ne}</h1>
+        </div>
+        <div className="right">
+            <h2>{props.ag}</h2>
+            <h2>{props.nr}</h2>
+        </div>
+    </div>
+  )
+}
+
+export default Card
+
+
+
+----------********** index.css **********----------
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+  background-color: #111;
+}
+button:hover{
+  background-color: blueviolet;
+  
+
+}
+button{
+  padding: 2vh 5vh;
+  background-color: aliceblue;
+  color: black;
+  border: none;
+  border-radius: 113px;
+  cursor: pointer;
+  font-size: 3vh;
+  text-shadow: 3vh;
+  margin: 4vh;
+}
+
+.card{
+  height: 10vh;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0vh 8vh;
+}
+.right{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7vh;
+}
+.main{
+  padding: 4vh;
+}
+
+
+
