@@ -1,0 +1,26 @@
+import React, { createContext } from 'react'
+
+export const DataContext = createContext();
+
+const UserContext = ({children}) => {
+    const info = {
+        name: "sunny",
+        age: 24
+    }
+  return (
+    <div>
+        <DataContext.Provider value={info}>
+            {children}
+        </DataContext.Provider>
+    </div>
+  )
+}
+
+export default UserContext
+
+
+-----------------------Wrap App in main.jsx ----------------------
+
+<UserContext>
+      <App />
+</UserContext>
